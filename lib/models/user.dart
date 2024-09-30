@@ -1,3 +1,5 @@
+// Definició de la classe User.
+
 class User {
   static const String usrUrl =
       "https://randomuser.me/api/portraits/women/44.jpg";

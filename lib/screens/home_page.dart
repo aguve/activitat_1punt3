@@ -4,6 +4,7 @@ import 'package:activitat_1punt3/styles/widgets/activity_tile.dart';
 import 'package:activitat_1punt3/screens/profile_page.dart';
 import 'package:flutter/material.dart';
 
+// Widget que mostra concells per a l'usuari i les darreres activitats.
 class HomePage extends StatelessWidget {
   const HomePage({super.key, required this.usuari});
 
@@ -42,7 +43,7 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Hola ${usuari.name},',
+              'Hola ${usuari.name.trimRight()},',
               style: AppStyles.bigTitle,
             ),
             const SizedBox(height: 8),
@@ -66,8 +67,9 @@ class HomePage extends StatelessWidget {
             const SizedBox(height: 10),
             Expanded(
               child: ListView(
+                // llista amb cada una de les darreres activitas de l'usuari
                 children: [
-                  activityTile('Running', 'Yesterday, 18:20', '7,300 km',
+                  activityTile('Running', 'Ahir, 18:20', '7,300 km',
                       Icons.run_circle_outlined),
                   activityTile('Running', '15 Sep 2024, 21:45', '6,550 km',
                       Icons.run_circle_outlined),
@@ -92,7 +94,7 @@ class HomePage extends StatelessWidget {
                           strokeWidth: 10,
                           backgroundColor: Colors.grey[300],
                           valueColor: const AlwaysStoppedAnimation<Color>(
-                              Color.fromARGB(255, 32, 65, 255)),
+                              Color(0xff3407da)),
                         ),
                       ),
                       Text('65%', style: AppStyles.mediumTitle),

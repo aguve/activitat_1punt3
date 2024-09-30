@@ -3,6 +3,7 @@ import 'package:activitat_1punt3/styles/app_styles.dart';
 import 'package:activitat_1punt3/styles/widgets/stat_card.dart';
 import 'package:flutter/material.dart';
 
+// Widget que mostra el perfil i els assoliments de l'usuari.
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key, required this.usuari});
 
@@ -23,6 +24,7 @@ class ProfilePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            // Perfil de l'usuari
             const CircleAvatar(
               radius: 60,
               backgroundImage: NetworkImage(User.usrUrl),
@@ -38,12 +40,14 @@ class ProfilePage extends StatelessWidget {
               style: AppStyles.otherText,
             ),
             const SizedBox(height: 24),
+            // Widget Row amb les targetes d'assoliments
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 statCard(Icons.timer, 'Time', '2h 45\''),
-                statCard(Icons.location_on, 'Km', '212,4'),
-                statCard(Icons.home, 'Activities', '42'),
+                statCard(Icons.location_on, 'Km', usuari.runnedDist.toString()),
+                statCard(
+                    Icons.home, 'Activities', usuari.activities.toString()),
               ],
             ),
             const SizedBox(height: 30),

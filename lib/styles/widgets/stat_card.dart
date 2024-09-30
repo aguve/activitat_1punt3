@@ -1,6 +1,9 @@
 import 'package:activitat_1punt3/styles/app_styles.dart';
 import 'package:flutter/material.dart';
 
+//  Definició de les targetes que es fan servir per mostrar les estadístiques
+//  de l'usuari a la profile_page.
+//  També es defineixen els estils de les targetes.
 Widget statCard(IconData icon, String label, String value) {
   return Card(
     elevation: 3,

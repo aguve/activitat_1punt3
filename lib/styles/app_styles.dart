@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+// Defineix els estils usats en l'aplicación.
 class AppStyles {
   static TextStyle bigTitle = TextStyle(
     fontSize: 40,
