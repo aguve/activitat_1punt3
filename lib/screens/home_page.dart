@@ -43,6 +43,8 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
+              // amb la funció trimRight, eliminem l'espai que deixa flutter
+              // entre el nom de l'usuari i la coma.
               'Hola ${usuari.name.trimRight()},',
               style: AppStyles.bigTitle,
             ),
