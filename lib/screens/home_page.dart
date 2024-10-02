@@ -82,7 +82,7 @@ class HomePage extends StatelessWidget {
                       Icons.run_circle_outlined),
                 ],
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 40),
               // Indicador de progrés personal
               Center(
                 child: Column(

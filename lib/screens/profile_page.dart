@@ -46,7 +46,7 @@ class ProfilePage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  statCard(Icons.timer, 'Time', '2h 45\''),
+                  statCard(Icons.alarm_outlined, 'Time', '2h 45\''),
                   const SizedBox(width: 5),
                   statCard(
                       Icons.location_on, 'Km', usuari.runnedDist.toString()),
@@ -71,13 +71,13 @@ class ProfilePage extends StatelessWidget {
                         max: 220,
                         divisions: 100,
                         activeColor: const Color(0xffbf63f8),
-                        label: '155 kg',
+                        label: '155 cm',
                         onChanged: (value) => value = 155,
                       ),
                     ),
                     Text(
                       "155 cm",
-                      style: AppStyles.activityType,
+                      style: AppStyles.otherText,
                     ),
                   ],
                 ),
@@ -104,7 +104,7 @@ class ProfilePage extends StatelessWidget {
                     ),
                     Text(
                       "55 kg",
-                      style: AppStyles.activityType,
+                      style: AppStyles.otherText,
                     ),
                   ],
                 ),
