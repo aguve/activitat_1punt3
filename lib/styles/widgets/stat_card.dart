@@ -10,7 +10,7 @@ Widget statCard(IconData icon, String label, String value) {
     color: const Color(0xffbf63f8),
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
     child: Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
       child: Column(
         children: [
           Icon(icon, size: 30),

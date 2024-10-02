@@ -37,39 +37,42 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              // amb la funció trimRight, eliminem l'espai que deixa flutter
-              // entre el nom de l'usuari i la coma.
-              'Hola ${usuari.name.trimRight()},',
-              style: AppStyles.bigTitle,
-            ),
-            const SizedBox(height: 8),
-            Text(
-              usuari.recomendations,
-              style: AppStyles.otherText,
-            ),
-            Align(
-              alignment: Alignment.centerRight,
-              child: Text(
-                'Més detalls',
-                style: AppStyles.link,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                // amb la funció trimRight, eliminem l'espai que deixa flutter
+                // entre el nom de l'usuari i la coma.
+                'Hola ${usuari.name.trimRight()},',
+                style: AppStyles.bigTitle,
               ),
-            ),
-            const SizedBox(height: 20),
-            Text(
-              'Darreres activitats',
-              style: AppStyles.mediumTitle,
-            ),
-            const Divider(),
-            const SizedBox(height: 10),
-            Expanded(
-              child: ListView(
-                // llista amb cada una de les darreres activitas de l'usuari
+              const SizedBox(height: 8),
+              Text(
+                usuari.recomendations,
+                style: AppStyles.otherText,
+              ),
+              Align(
+                alignment: Alignment.centerRight,
+                child: Text(
+                  'Més detalls',
+                  style: AppStyles.link,
+                ),
+              ),
+              const SizedBox(height: 20),
+              Text(
+                'Darreres activitats',
+                style: AppStyles.mediumTitle,
+              ),
+              const Divider(),
+              const SizedBox(height: 10),
+              ListView(
+                shrinkWrap: true,
+                // Permet que ListView funcioni dins del SingleChildScrollView
+                physics: const NeverScrollableScrollPhysics(),
+                // Desactiva el desplaçament dins de ListView
                 children: [
                   activityTile('Running', 'Ahir, 18:20', '7,300 km',
                       Icons.run_circle_outlined),
@@ -79,35 +82,35 @@ class HomePage extends StatelessWidget {
                       Icons.run_circle_outlined),
                 ],
               ),
-            ),
-            const SizedBox(height: 20),
-            // Indicador de progrés personal
-            Center(
-              child: Column(
-                children: [
-                  Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      SizedBox(
-                        width: 100,
-                        height: 100,
-                        child: CircularProgressIndicator(
-                          value: 0.65,
-                          strokeWidth: 10,
-                          backgroundColor: Colors.grey[300],
-                          valueColor: const AlwaysStoppedAnimation<Color>(
-                              Color(0xff3407da)),
+              const SizedBox(height: 20),
+              // Indicador de progrés personal
+              Center(
+                child: Column(
+                  children: [
+                    Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        SizedBox(
+                          width: 100,
+                          height: 100,
+                          child: CircularProgressIndicator(
+                            value: 0.65,
+                            strokeWidth: 10,
+                            backgroundColor: Colors.grey[300],
+                            valueColor: const AlwaysStoppedAnimation<Color>(
+                                Color(0xff3407da)),
+                          ),
                         ),
-                      ),
-                      Text('65%', style: AppStyles.mediumTitle),
-                    ],
-                  ),
-                  const SizedBox(height: 8),
-                  Text('Objectiu mensual', style: AppStyles.otherText),
-                ],
+                        Text('65%', style: AppStyles.mediumTitle),
+                      ],
+                    ),
+                    const SizedBox(height: 8),
+                    Text('Objectiu mensual', style: AppStyles.otherText),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
